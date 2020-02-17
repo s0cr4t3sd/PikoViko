@@ -12,12 +12,12 @@ import javax.swing.ImageIcon;
  * @author s0cr4t3sd
  */
 public enum CaraDado {
-    UNO(1,1, new ImageIcon("res/flat,128x128,075,t.jpg")),
-    DOS(2,2, new ImageIcon("res/flat,128x128,075,t.jpg")),
-    TRES(3,3, new ImageIcon("res/flat,128x128,075,t.jpg")),
-    CUATRO(4,4, new ImageIcon("res/flat,128x128,075,t.jpg")),
-    CINCO(5,5, new ImageIcon("res/flat,128x128,075,t.jpg")),
-    SEIS(6,5, new ImageIcon("res/flat,128x128,075,t.jpg"));
+    UNO(1,1, new ImageIcon("res/dado1.png")),
+    DOS(2,2, new ImageIcon("res/dado2.png")),
+    TRES(3,3, new ImageIcon("res/dado3.png")),
+    CUATRO(4,4, new ImageIcon("res/dado4.png")),
+    CINCO(5,5, new ImageIcon("res/dado5.png")),
+    SEIS(6,5, new ImageIcon("res/dadoGusano.png"));
     
     private int numero, valor;
     private ImageIcon icon;

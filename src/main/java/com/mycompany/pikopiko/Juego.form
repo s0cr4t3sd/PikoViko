@@ -56,10 +56,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Users\moral\OneDrive\Escritorio\PikoViko\res\piko_piko.jpg"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.ImageIcon(&quot;res/piko_piko.jpg&quot;)" type="code"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AccessibilityProperties>

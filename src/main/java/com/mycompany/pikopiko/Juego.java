@@ -52,7 +52,7 @@ public class Juego extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(210, 350, 78, 32);
+        jButton3.setBounds(210, 350, 90, 31);
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,10 +61,9 @@ public class Juego extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(210, 390, 78, 32);
+        jButton1.setBounds(210, 390, 90, 31);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Users\\moral\\OneDrive\\Escritorio\\PikoViko\\res\\piko_piko.jpg")); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon("res/piko_piko.jpg"));
         jLabel1.setAutoscrolls(true);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 500, 500);

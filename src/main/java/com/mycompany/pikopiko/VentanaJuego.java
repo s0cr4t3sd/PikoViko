@@ -8,6 +8,7 @@ package com.mycompany.pikopiko;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +21,8 @@ public class VentanaJuego extends javax.swing.JFrame {
      * Creates new form VentanaJuego
      */
     private String valueCombobox1;
+    private int totalCombo;
+    private ArrayList<Jugador> jugadores = new ArrayList<>();
     
     public VentanaJuego(Juego juego) {
         this.juego = juego;
@@ -34,30 +37,32 @@ public class VentanaJuego extends javax.swing.JFrame {
         jComboBox1.addItem("Cuatro");
         
         jButton1.setText("Aceptar");
-        
-        
-        jButton2.setVisible(false);
         jButton2.setText("Aceptar");
-        jLabel2.setVisible(false);
-        jLabel2.setText("Jugador 1");
-        jTextField1.setVisible(false);
-        jTextField1.setText("");
-        jLabel3.setVisible(false);
-        jLabel3.setText("Jugador 2");
-        jTextField2.setVisible(false);
-        jTextField2.setText("");
-        jLabel4.setVisible(false);
-        jLabel4.setText("Jugador 3");
-        jTextField3.setVisible(false);
-        jTextField3.setText("");
-        jLabel5.setVisible(false);
-        jLabel5.setText("Jugador 4");
-        jTextField4.setVisible(false);
-        jTextField4.setText("");
-        
         jButton3.setText("Volver");
         jButton4.setText("Elegir de nuevo");
+        
+        jButton2.setVisible(false);
         jButton4.setVisible(false);
+        
+        jLabel2.setVisible(false);
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jLabel5.setVisible(false);
+        
+        jLabel2.setText("Nombre J. 1");
+        jLabel3.setText("Nombre J. 2");
+        jLabel4.setText("Nombre J. 3");
+        jLabel5.setText("Nombre J. 4");
+        
+        jTextField1.setVisible(false);
+        jTextField2.setVisible(false);
+        jTextField3.setVisible(false);
+        jTextField4.setVisible(false);
+        
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
         
     }
 
@@ -126,6 +131,11 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
 
         jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("jButton3");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -232,29 +242,32 @@ public class VentanaJuego extends javax.swing.JFrame {
         
         switch(valueCombobox1){
             case "Dos":
-                jLabel2.setVisible(true);
-                jTextField1.setVisible(true);
+                jLabel2.setVisible(true);                
                 jLabel3.setVisible(true);
+                
+                jTextField1.setVisible(true);
                 jTextField2.setVisible(true);
                 break;
             
             case "Tres":
                 jLabel2.setVisible(true);
-                jTextField1.setVisible(true);
                 jLabel3.setVisible(true);
-                jTextField2.setVisible(true);
                 jLabel4.setVisible(true);
+                
+                jTextField1.setVisible(true);                
+                jTextField2.setVisible(true);                
                 jTextField3.setVisible(true);
                 break;
                 
             case "Cuatro":
                 jLabel2.setVisible(true);
-                jTextField1.setVisible(true);
                 jLabel3.setVisible(true);
-                jTextField2.setVisible(true);
                 jLabel4.setVisible(true);
-                jTextField3.setVisible(true);
                 jLabel5.setVisible(true);
+                
+                jTextField1.setVisible(true);                
+                jTextField2.setVisible(true);                
+                jTextField3.setVisible(true);                
                 jTextField4.setVisible(true);
                 break;
         }
@@ -277,15 +290,15 @@ public class VentanaJuego extends javax.swing.JFrame {
         jButton4.setVisible(false);
         jButton2.setVisible(false);
         
-        jLabel2.setVisible(false);
-        jTextField1.setVisible(false);
+        jLabel2.setVisible(false);        
         jLabel3.setVisible(false);
-        jTextField2.setVisible(false);
         jLabel4.setVisible(false);
-        jTextField3.setVisible(false);
         jLabel5.setVisible(false);
-        jTextField4.setVisible(false);
         
+        jTextField1.setVisible(false);
+        jTextField2.setVisible(false);
+        jTextField3.setVisible(false);
+        jTextField4.setVisible(false);        
         
         jTextField1.setText("");
         jTextField2.setText("");
@@ -296,6 +309,42 @@ public class VentanaJuego extends javax.swing.JFrame {
         jButton1.setEnabled(true);
         
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        //Compruebo si el ArrayList esta vacio
+        if(!jugadores.isEmpty()){ jugadores.clear(); }
+        
+        if(jugadores.isEmpty()){
+            if(!jTextField1.getText().isEmpty() && !jTextField1.getText().equals(" ")){
+                jugadores.add(new Jugador(jTextField1.getText()));
+            }else{
+                JOptionPane.showMessageDialog(this, "El nombre del judaor nº 1 tiene que tener contenido");
+            }
+            if(!jTextField2.getText().isEmpty() && !jTextField2.getText().equals(" ")){
+                jugadores.add(new Jugador(jTextField2.getText()));
+            }else{
+                JOptionPane.showMessageDialog(this, "El nombre del judaor nº 2 tiene que tener contenido");
+            }
+
+            if(jTextField3.isVisible()){
+                jugadores.add(new Jugador(jTextField3.getText()));
+                if(jTextField3.getText().isEmpty() || jTextField3.getText().equals(" ")){
+                    JOptionPane.showMessageDialog(this, "El nombre del judaor nº 3 tiene que tener contenido");
+                }
+            }
+            if(jTextField4.isVisible()){
+                jugadores.add(new Jugador(jTextField4.getText()));
+                if(jTextField4.getText().isEmpty() || jTextField4.getText().equals(" ")){
+                    JOptionPane.showMessageDialog(this, "El nombre del judaor nº 3 tiene que tener contenido");
+                }
+            }
+
+        }else{
+            JOptionPane.showMessageDialog(this, "Llama a un programador que esto va a explotar");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -329,7 +378,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     }
 
     
-    private ArrayList<Jugador> jugadores = new ArrayList<>();
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
